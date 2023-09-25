@@ -36,6 +36,41 @@
   )
 )
 
+// here's an example of table layout with varying column widths
+// using one main tablex call and then subsequent rows with tablex calls
+// we need to set inset to 0pt in the main tablex call to not have padding in each cell
+/*
+#tablex(
+  columns: (1fr,),
+  header-rows:0,
+  inset: 0pt,
+  tablex(columns: (5fr, 4fr), rows: (3cm,),
+    [Item Code #v(1fr) #text(20pt)[*31000428*]],
+    [#align(center)[#rect(width:75%,height:2cm)[_Imagine Barcode Here_] #v(1fr) Charge: *BK3264232401*]]
+  ),
+  tablex(columns: (1fr,), rows: (2cm,),
+    [#align(left + horizon)[#text(20pt)[*NE Van Swch MP 6(6x3.5fz)*]]]
+  ),
+  tablex(columns: (1fr,), rows: (7mm,),
+    [Storage: DFR]
+  ),
+  tablex(columns: (5fr, 4fr), rows: (2cm,),
+    [BBD #h(1fr) #text(20pt)[*30.09.2024*] \ (DD.MM.YYYY)], rowspanx(2)[Daily Coding \ #align(left + horizon)[#text(18pt)[*3264*]]],
+    [placeholder]
+  ),
+  tablex(columns: 2 * (1fr,),
+    [Lot \ #text(20pt)[*BK3264232401*]],
+    [Remark/Line],
+  ),
+  tablex(columns: (1fr,), rows: (2cm,),
+    [Supplier],
+  ),
+  tablex(columns: (2fr,1fr,), rows: (2cm,),
+    [Order Number], [Original Amount \ #h(1fr) #text(20pt)[*275.000 CR*]],
+  )
+)
+*/
+
 #text(20pt)[
   Sample taken at: `________________` (date/signature) \
   2nd Invest at:\u{0020} \u{0020}  \u{0020}  `________________` (date/signature) // added space unicode chars
